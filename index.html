@@ -11,7 +11,6 @@ body {
   font-family: 'Poppins', sans-serif;
   color: white;
   text-align: center;
-  overflow: hidden;
   background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1a2980);
   background-size: 400% 400%;
   animation: gradientBG 12s ease infinite;
@@ -24,23 +23,38 @@ body {
 }
 
 .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 20px;
-  position: relative;
-  z-index: 2;
+  text-align: center;
+}
+
+/* Glass premium effect */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 1200px;
+  height: 85%;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  z-index: -1;
 }
 
 .logo {
-  width: 420px;
-  max-width: 90%;
+  width: 320px; /* صغرناه شوية باش يبان كلشي */
+  max-width: 85%;
   height: auto;
-  margin-bottom: 40px;
-  animation: glow 2.5s ease-in-out infinite alternate;
-}
+  margin-bottom: 25px;
+  animation: glow
 
 @keyframes glow {
   from {filter: drop-shadow(0 0 10px #00e5ff);} 
